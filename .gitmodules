@@ -1,0 +1,3 @@
+[submodule "contrib/liballocs"]
+	path = contrib/liballocs
+	url = https://github.com/stephenrkell/liballocs.git

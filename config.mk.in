@@ -1,0 +1,23 @@
+LIBALLOCS := @liballocs@
+LIBSYSTRAP := @libsystrap@
+LIBRUNT := @librunt@
+LIBDLBIND := @libdlbind@
+TOOLSUB := @toolsub@
+ELFTIN := @elftin@
+CIL_INSTALL := @cil_install@
+
+# export anything needed during build of libcrunch-enabled executables
+export CIL_INSTALL
+export TOOLSUB
+export ELFTIN
+export LIBALLOCS
+export LIBSYSTRAP
+export LIBRUNT
+export LIBDLBIND
+
+XWRAP_LDPLUGIN := $(ELFTIN)/xwrap-ldplugin/xwrap-ldplugin.so
+export XWRAP_LDPLUGIN
+
+# Include paths for building libcrunch
+CPPFLAGS := -I@librunt@/include -I@libsystrap@/include -I@liballocs@/include
+export CPPFLAGS

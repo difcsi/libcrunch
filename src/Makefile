@@ -79,7 +79,9 @@ $(C_DEPS): .%.d : %.c
 $(CC_DEPS): .%.d : %.cc
 	$(CXX) -MM $(CXXFLAGS) "$<"  > "$@" || (rm -f "$@"; false)
 
+ifneq ($(MAKECMDGOALS),clean)
 -include $(DEPS)
+endif
 
 # We want to make sure that the libcrunch--liballocs interface is 
 # linked in the fastest possible way.
